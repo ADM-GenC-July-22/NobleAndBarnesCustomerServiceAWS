@@ -33,7 +33,6 @@ phases:
   post_build:
     commands:
     - echo Build completed on `date`
-    - mvn clean
     - mvn package
     - mv target/Customer-Service-AWS-0.0.1-SNAPSHOT.jar Customer-Service-AWS-0.0.1-SNAPSHOT.jar
 artifacts:
