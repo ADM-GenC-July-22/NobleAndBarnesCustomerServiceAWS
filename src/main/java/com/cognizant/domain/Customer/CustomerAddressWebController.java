@@ -20,7 +20,7 @@ import com.cognizant.domain.Address.Address;
 import com.cognizant.domain.Address.AddressRepository;
 
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "http://nb-customerservice.eba-4udtrze3.us-west-2.elasticbeanstalk.com/customers"})
 @RestController
 public class CustomerAddressWebController {
 	
