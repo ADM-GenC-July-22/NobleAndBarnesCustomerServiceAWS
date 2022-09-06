@@ -6,36 +6,33 @@ phases:
 
 
 
-  install:
-
+ install:
     runtime-versions:
-
       java: corretto11
 
 
 
-  pre_build:
-
+ pre_build:
     commands:
-
       - echo In the pre_build phase...
+      - mvn test
 
 
 
-  build:
-
+ build:
     commands:
+      - echo Build started on `date`
+      - mvn package
 
-      - echo Build started on `date`s
 
 
-
-  post_build:
+ post_build:
     commands:
-    - echo Build completed on `date`
-    - mvn package
-    - mv target/Customer-Service-AWS-0.0.1-SNAPSHOT.jar Customer-Service-AWS-0.0.1-SNAPSHOT.jar
+      - echo Build completed on `date`
+
+
+
 artifacts:
   files:
-  - Customer-Service-AWS-0.0.1-SNAPSHOT.jar
-  - .ebextensions/**/*
+    - target/*.jar
+  discard-paths: yes
